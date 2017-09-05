@@ -1,6 +1,6 @@
 class Api::V1::SongsController < ApplicationController
   def index
-    @songs = Song.where("song_name = ?", song_params[:song_name])
+    @songs = Song.where("song_name like ?", "%"+song_params[:song_name]+"%")
     @songs = @songs.map do |song|
       {
           id: song.id,
