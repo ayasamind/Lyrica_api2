@@ -24,3 +24,6 @@ Song.create(:song_id => '7', :song_name => 'sample7', :album_id => '7', :artist_
 Song.create(:song_id => '8', :song_name => 'sample8', :album_id => '8', :artist_id => '8', :lyrics_data => 'sample8', :youtube_id => 'sample', :youtube_start => '50')
 Song.create(:song_id => '9', :song_name => 'sample9', :album_id => '9', :artist_id => '9', :lyrics_data => 'sample9', :youtube_id => 'sample', :youtube_start => '50')
 Song.create(:song_id => '10', :song_name => 'sample10', :album_id => '10', :artist_id => '10', :lyrics_data => 'sample10', :youtube_id => 'sample', :youtube_start => '50')
+
+Artist.create(:artist_id => '1', :artist_name => 'sample_artist')
+Album.create(:album_id => '1', :album_name => 'sample_album', :artist_id => '1')
