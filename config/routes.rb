@@ -1,15 +1,15 @@
 Rails.application.routes.draw do
   namespace :api, {format: 'json'} do
   namespace :v1 do
-   # namespace :songs do
-  ##    get "/" , :action => "index"
-  #  end
+   namespace :songs do
+      get :song_search
+    end
    # namespace :artists do
     #  get "/" , :action => "index"  
     #end
-    # namespace :albums do
-    #  get "/" , :action => "index"  
-  #  end
+     namespace :albums do
+      get :album_search  
+   end
 #end
         
 resources :artists do
