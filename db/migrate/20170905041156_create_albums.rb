@@ -3,10 +3,10 @@ class CreateAlbums < ActiveRecord::Migration[5.1]
     create_table :albums do |t|
       t.integer :album_id
       t.string :album_name
-      t.references :artist_id
+      t.references :artist
 
       t.timestamps
     end
-    add_index :albums, :album_id
+    add_index :albums
   end
 end

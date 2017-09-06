@@ -1,7 +1,7 @@
 class Api::V1::SongsController < ApplicationController
   def index
     @artist = Artist.find(params[:artist_id])
-    @album = Album.find(params[:album_id])
+    #@albums = Album.find(params[:album_id])
     @songs = @song.albums.artists.order(posted_at: :desc)
     #@songs = Song.where("song_name like ?", "%"+song_params[:song_name]+"%")
     #@songs = @songs.map do |song|
@@ -21,8 +21,8 @@ class Api::V1::SongsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:artist_id])
-    @albums = @artist.albums.find(params[:album_id])
-    @songs = @albums.songs.find(params[:id])
+    #@albums = @artist.albums.find(params[:album_id])
+    #@songs = @albums.songs.find(params[:id])
     render json: @songs
   end
 
