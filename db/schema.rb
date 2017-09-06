@@ -12,37 +12,31 @@
 
 ActiveRecord::Schema.define(version: 20170905041224) do
 
-  create_table "albums", force: :cascade do |t|
-    t.integer "album_id"
+  create_table "albums", primary_key: "album_id", force: :cascade do |t|
     t.string "album_name"
-    t.integer "artist_id_id"
+    t.integer "artist_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["album_id"], name: "index_albums_on_album_id"
-    t.index ["artist_id_id"], name: "index_albums_on_artist_id_id"
+    t.index ["artist_id"], name: "index_albums_on_artist_id"
   end
 
-  create_table "artists", force: :cascade do |t|
-    t.integer "artist_id"
+  create_table "artists", primary_key: "artist_id", force: :cascade do |t|
     t.string "artist_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["artist_id"], name: "index_artists_on_artist_id"
   end
 
-  create_table "songs", force: :cascade do |t|
-    t.integer "song_id"
+  create_table "songs", primary_key: "song_id", force: :cascade do |t|
     t.string "song_name"
-    t.integer "album_id_id"
-    t.integer "artist_id_id"
+    t.integer "album_id"
+    t.integer "artist_id"
     t.text "lyrics_data"
     t.string "youtube_id"
     t.integer "youtube_start"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["album_id_id"], name: "index_songs_on_album_id_id"
-    t.index ["artist_id_id"], name: "index_songs_on_artist_id_id"
-    t.index ["song_id"], name: "index_songs_on_song_id"
+    t.index ["album_id"], name: "index_songs_on_album_id"
+    t.index ["artist_id"], name: "index_songs_on_artist_id"
   end
 
 end

@@ -11,11 +11,21 @@ Rails.application.routes.draw do
     #  get "/" , :action => "index"  
   #  end
 #end
-
-resources :artists, shallow:true do 
-    resources :albums #do
-      #resources :songs
-  #end
+        
+resources :artists do
+         collection do
+         get :search
+        end
+    resources :albums do
+        collection do
+         get :search
+        end
+      resources :songs do
+           collection do
+         get :search
+        end
+    end
+  end
 end
   
 
