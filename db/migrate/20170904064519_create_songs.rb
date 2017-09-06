@@ -1,7 +1,6 @@
 class CreateSongs < ActiveRecord::Migration[5.1]
   def change
-    create_table :songs do |t|
-      t.integer :song_id
+    create_table :songs, primary_key:"song_id" do |t|
       t.string :song_name
       t.references :album
       t.references :artist
@@ -11,6 +10,6 @@ class CreateSongs < ActiveRecord::Migration[5.1]
 
       t.timestamps
     end
-    add_index :songs
+
   end
 end
